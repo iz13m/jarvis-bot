@@ -1,3 +1,5 @@
+import time
+
 def get_response(message):
     message = message.lower().strip()
 
@@ -12,6 +14,9 @@ def get_response(message):
   
     elif "What is today?":
         return "Today is a great day!"
-  
+    
+    elif "what is the date" in message:
+        return time.ctime()
+    
     else:
         return "Sorry, I don't understand that yet."
