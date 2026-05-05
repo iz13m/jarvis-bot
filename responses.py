@@ -1,3 +1,5 @@
+from datetime import datetime
+
 def get_response(message):
     message = message.lower().strip()
 
@@ -8,10 +10,11 @@ def get_response(message):
         return "Good evening! Time to relax and recharge."
 
     elif "good afternoon" in message:
-        return "good after noon."
-  
-    elif "What is today?":
-        return "Today is a great day!"
-  
+        return "Good afternoon."
+
+    elif "what is today?" in message:
+        today = datetime.now().strftime("%A, %B %d, %Y")
+        return f"Today is {today}."
+
     else:
         return "Sorry, I don't understand that yet."
